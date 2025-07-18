@@ -26,12 +26,13 @@ Route::get('/desenvolvedor_projeto', function () {
             foreach ($d->projetos as $p) {
                 echo"<li>";
                 echo"Nome: " . $p->nome . " / ";
-                echo"Estimativa de Horas: " . $p->estimativa_horas;
+                echo"Horas do projeto: " . $p->estimativa_horas . " / ";
+                echo"Horas de trabalho:" . $p->pivot->horas_semanais;
                 echo"</li>";
             }
             echo"</ul>";
         }
         echo"<hr>";
     }
-    //return $desenvolvedores->toJson();
+    // return $desenvolvedores->toJson();
 });
