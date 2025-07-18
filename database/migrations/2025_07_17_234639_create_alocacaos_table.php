@@ -14,9 +14,9 @@ class CreateAlocacaosTable extends Migration
     public function up()
     {
         Schema::create('alocacoes', function (Blueprint $table) {
-            $table->bigInteger('desenvolvedor_id')->unsigned();
+            $table->integer('desenvolvedor_id')->unsigned();
             $table->foreign('desenvolvedor_id')->references('id')->on('desenvolvedores');
-            $table->bigInteger('projeto_id')->unsigned();
+            $table->integer('projeto_id')->unsigned();
             $table->foreign('projeto_id')->references('id')->on('projetos');
             $table->integer('horas_semanais');
             $table->timestamps();
